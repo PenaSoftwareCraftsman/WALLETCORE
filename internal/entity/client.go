@@ -52,6 +52,10 @@ func (c *Client) Update(name string, email string) error {
 	return nil
 }
 
-func (client *Client) AddAccount(account *Account) {
+func (client *Client) AddAccount(account *Account) error {
+	if account.Client.Id != client.Id {
+		return errors.New("account does not belong to this client")
+	}
 	client.Accounts = append(client.Accounts, account)
+	return nil
 }
