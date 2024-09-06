@@ -27,3 +27,8 @@ func NewAccount(client *Client) *Account {
 	}
 	return account
 }
+
+func (account *Account) Credit(amount float64) {
+	account.Balance += amount
+	account.UpdatedAt = time.Now()
+}
