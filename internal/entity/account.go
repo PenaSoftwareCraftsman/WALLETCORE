@@ -32,3 +32,8 @@ func (account *Account) Credit(amount float64) {
 	account.Balance += amount
 	account.UpdatedAt = time.Now()
 }
+
+func (account *Account) Debit(amount float64) {
+	account.Balance -= amount
+	account.UpdatedAt = time.Now()
+}
