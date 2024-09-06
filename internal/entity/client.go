@@ -11,6 +11,7 @@ type Client struct {
 	Id        string
 	Name      string
 	Email     string
+	Accounts  []*Account
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }
@@ -49,4 +50,8 @@ func (c *Client) Update(name string, email string) error {
 		return err
 	}
 	return nil
+}
+
+func (client *Client) AddAccount(account *Account) {
+	client.Accounts = append(client.Accounts, account)
 }
