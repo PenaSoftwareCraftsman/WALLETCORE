@@ -42,6 +42,6 @@ func (uc *CreateAccountUseCase) Execute(input CreateAccountInputDTO) (*CreateAcc
 		return nil, err
 	}
 	return &CreateAccountOutputDTO{
-		ID: account.ID,
+		ID: account.Id,
 	}, nil
 }
